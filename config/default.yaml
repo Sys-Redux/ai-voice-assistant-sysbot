@@ -4,3 +4,11 @@ audio:
   channels: 1
   input_device: null
   output_device: null
+
+wake_word:
+  engine: "openwakeword"
+  model_path: null
+  sensitivity: 0.5
+  wake_word: "hey_sysbot"
+  inference_framework: "onnx"
+  cooldown: 2.0

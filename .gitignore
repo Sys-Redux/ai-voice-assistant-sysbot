@@ -1,2 +1,5 @@
 .env
-.md-files/*
+.github/.md-files/
+venv/
+__pycache__/
+.github/.md-files/
