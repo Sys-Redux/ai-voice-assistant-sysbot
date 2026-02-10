@@ -5,6 +5,37 @@
 
 This document describes the proposed software and hardware architecture for SysBot, an AI-powered voice assistant robot. The system is designed to be modular, allowing for independent development and testing of each component.
 
+## APP
+
+*Main Screen*
+
+The main screen will be the AI voice assistant, which is a cat-robot with different animations for different "moods" (listening, thinking, speaking, idle). This animation will be in the center of the screen with a studio black background.
+    
+The app will always be listening for the user to say it's wake word. Once user says wake word, the speech-to-text will be triggered, then an API request will be sent, then the response will be spoken.
+    
+The screen that the app is displayed is the head of a robot. The body of the robot is an RC car. The app is running on a raspberry pi 5 & we will be using an AI camera to detect user's face so that the robot can follow the user around in the phone sical world.
+*Web App Side-App*
+    
+There will be an app that will connect to the robot(the app running on the robot), intended to be accessed on mobile, that will allow user to have more control over the robot.
+    
+**Settings-Button**
+        
+AI-Select
+            
+This button will present a drop-down menu in which the user can choose which AI model will be supplying answers via the models API.
+        
+Voice-Select
+            
+Dropdown to select which voice the assistant will use. Each option of the drop-down will have a button to hear a sample of that voice.
+    
+Manual-Control-Button
+        
+Clicking this button will bring up a joystick, granting the user manual control over the rc-car. (The default control of the rc car is AI using facial recognition to follow the user around).
+
+**Architectural Considerations**
+    
+Calling an API to get an answer is great, but we need to implement systems that will make this robot/app learn the user over time. First thing that comes to mind is a RAG system so that the app will learn from every request/response. We're aiming for something similar to chatGPT, as chatGPT adapts to the user over time and has memory of previous conversations.
+
 ---
 
 ## High-Level Architecture
